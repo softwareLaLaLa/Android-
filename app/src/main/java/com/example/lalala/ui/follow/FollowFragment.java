@@ -1,11 +1,10 @@
-package com.example.lalala.ui.gallery;
+package com.example.lalala.ui.follow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -15,21 +14,21 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.lalala.R;
 
-public class GalleryFragment extends Fragment {
+public class FollowFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private FollowViewModel followViewModel;
     private ListView listView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        followViewModel =
+                ViewModelProviders.of(this).get(FollowViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_follow, container, false);
         //final TextView textView = root.findViewById(R.id.text_gallery);
-        listView=root.findViewById(R.id.list_gallery);
+        listView=root.findViewById(R.id.list_follow);
         listView.setAdapter(new FollowListAdapter(getActivity()));
 
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        followViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 //textView.setText(s);

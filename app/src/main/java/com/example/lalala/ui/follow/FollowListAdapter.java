@@ -1,4 +1,4 @@
-package com.example.lalala.ui.gallery;
+package com.example.lalala.ui.follow;
 
 import android.content.Context;
 import android.view.LayoutInflater;
