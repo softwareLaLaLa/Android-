@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.lalala.R;
+import com.example.lalala.sort.SortActivity;
 
 public class FollowFragment extends Fragment {
 
@@ -35,6 +37,8 @@ public class FollowFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Intent intent=new Intent(getActivity(),);
                 //startActivity(intent);
+                Toast toast=Toast.makeText(getActivity(),"点击了"+position,Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
         followViewModel.getText().observe(this, new Observer<String>() {
