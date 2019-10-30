@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 
@@ -33,16 +34,24 @@ public class HomeFragment extends Fragment {
 //                textView.setText(s);
 //            }
 //        });
-        btnSort=root.findViewById(R.id.btn_sort);
+        btnSort = root.findViewById(R.id.btn_sort);
         btnSort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), SortActivity.class);
+                Intent intent = new Intent(getActivity(), SortActivity.class);
                 startActivity(intent);
             }
         });
-        gridView=root.findViewById(R.id.grid_follow_field);
+        gridView = root.findViewById(R.id.grid_follow_field);
         gridView.setAdapter(new FollowFieldAdapter(getActivity()));
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Intent intent =new Intent(getActivity(),);
+                //startActivity(intent);
+            }
+        });
         return root;
     }
 }

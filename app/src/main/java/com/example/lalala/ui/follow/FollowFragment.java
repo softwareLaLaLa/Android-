@@ -1,9 +1,11 @@
 package com.example.lalala.ui.follow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -28,6 +30,13 @@ public class FollowFragment extends Fragment {
         listView=root.findViewById(R.id.list_follow);
         listView.setAdapter(new FollowListAdapter(getActivity()));
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Intent intent=new Intent(getActivity(),);
+                //startActivity(intent);
+            }
+        });
         followViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
