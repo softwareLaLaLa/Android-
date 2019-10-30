@@ -1,13 +1,10 @@
 package com.example.lalala.ui.home;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.GridView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,8 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.lalala.R;
-import com.example.lalala.mygridview.MyGridView;
-import com.example.lalala.sort.SortActivity;
+import com.example.lalala.view.MyGridView;
 
 public class HomeFragment extends Fragment {
 

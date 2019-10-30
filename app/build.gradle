@@ -23,6 +23,10 @@ android {
                     [
                             'src/main/res/layout/browse_fragment',
                             'src/main/res/layout/discussion_fragment',
+                            'src/main/res/layout/follow_fragment',
+                            'src/main/res/layout/side_fragment',
+                            'src/main/res/layout/sort_fragment',
+                            'src/main/res/layout/user_fragment',
                             'src/main/res/layout',
                             'src/main/res'
                     ]

@@ -73,7 +73,7 @@
             android:layout_marginTop="10dp"
             android:background="#000" />
 
-        <com.example.lalala.mygridview.MyGridView
+        <com.example.lalala.view.MyGridView
             android:id="@+id/grid_follow_field"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -84,7 +84,7 @@
             android:verticalSpacing="10dp"
             android:horizontalSpacing="10dp">
 
-        </com.example.lalala.mygridview.MyGridView>
+        </com.example.lalala.view.MyGridView>
 
     </LinearLayout>
 </ScrollView>

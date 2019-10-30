@@ -1,4 +1,4 @@
-package com.example.lalala.mygridview;
+package com.example.lalala.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
