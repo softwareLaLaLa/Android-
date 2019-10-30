@@ -9,16 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sort.SortActivity"></activity>
         <activity
-            android:name=".UserActivity"
-            android:label="@string/title_activity_user"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name=".MainActivity"
-            android:label="@string/title_activity_user"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".DiscussionActivity"
+            android:label="@string/title_activity_discussion"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".BrowseActivity"
+            android:label="@string/title_activity_browse"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
