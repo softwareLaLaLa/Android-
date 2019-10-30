@@ -13,10 +13,6 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_follow" />
         <item
-            android:id="@+id/nav_follow_field"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_follow_field"></item>
-        <item
             android:id="@+id/nav_collection"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_collection" />
