@@ -15,13 +15,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.lalala.R;
+import com.example.lalala.mygridview.MyGridView;
 import com.example.lalala.sort.SortActivity;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-    private Button btnSort;
-    private GridView gridView;
+    private MyGridView gridView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

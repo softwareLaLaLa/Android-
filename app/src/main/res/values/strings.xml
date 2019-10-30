@@ -16,9 +16,8 @@
     <string name="menu_follow">关注</string>
     <string name="menu_follow_field">关注领域</string>
     <string name="menu_setting">设置</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+
+    <string name="user_name">用户名</string>
+    <string name="user_identity">用户身份</string>
+    <string name="follow_field">关注领域</string>
 </resources>
