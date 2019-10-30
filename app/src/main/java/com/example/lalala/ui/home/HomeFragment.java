@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.lalala.R;
-import com.example.lalala.Sort.SortActivity;
+import com.example.lalala.sort.SortActivity;
 
 public class HomeFragment extends Fragment {
 

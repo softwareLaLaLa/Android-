@@ -1,4 +1,4 @@
-package com.example.lalala.Sort;
+package com.example.lalala.sort;
 
 import android.content.Context;
 import android.view.LayoutInflater;
