@@ -10,7 +10,9 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:background="#000"
-        android:scaleType="fitCenter"></ImageView>
+        android:scaleType="fitCenter">
+
+    </ImageView>
 
     <TextView
         android:id="@+id/tv_follow_field_name"
@@ -18,5 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        android:text="领域"></TextView>
+        android:text="@string/user_follow_field">
+
+    </TextView>
 </LinearLayout>

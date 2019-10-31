@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">lalala</string>
     <string name="title_activity_browse">browseActivity</string>
-    <string name="action_settings">setting</string>
+    <string name="action_settings">Setting</string>
     <string name="tab_text_1">关注</string>
     <string name="tab_text_2">推荐</string>
     <string name="tab_text_3">热榜</string>
+
+    <string name="menu_home">个人主页</string>
+    <string name="menu_follow">关注</string>
 </resources>
