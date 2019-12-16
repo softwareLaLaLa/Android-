@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="identity">
+        <item>学生</item>
+        <item>教师</item>
+        <item>在职员工</item>
+    </string-array>
+    <string-array name="field">
+        <item>领域1</item>
+        <item>领域2</item>
+        <item>领域3</item>
+    </string-array>
+</resources>

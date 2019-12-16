@@ -28,7 +28,7 @@ public class PaperAdapter extends RecyclerView.Adapter<PaperAdapter.ViewHolder>{
     static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView title;
         public TextView author;
-        public TextView type1, type2, type3;
+        public TextView type1, type3;
         public TextView commentNum;
         public TextView citeNum;
 
@@ -37,7 +37,6 @@ public class PaperAdapter extends RecyclerView.Adapter<PaperAdapter.ViewHolder>{
             title = view.findViewById(R.id.title);
             author = view.findViewById(R.id.author);
             type1 = view.findViewById(R.id.type1);
-            type2 = view.findViewById(R.id.type2);
             type3 = view.findViewById(R.id.type3);
             commentNum = view.findViewById(R.id.commentNum);
             citeNum = view.findViewById(R.id.citeNum);
@@ -64,8 +63,6 @@ public class PaperAdapter extends RecyclerView.Adapter<PaperAdapter.ViewHolder>{
         holder.title.setText(item.getTitle());
         holder.author.setText(item.getAuthor());
         holder.type1.setText(item.getSubjects().get(0));
-        holder.type2.setText(item.getSubjects().get(1));
-        holder.type2.setVisibility(View.VISIBLE);
         holder.type3.setText(item.getSubjects().get(2));
         holder.type3.setVisibility(View.VISIBLE);
         holder.commentNum.setText("评论数"+item.getComment());

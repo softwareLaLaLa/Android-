@@ -16,14 +16,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button browseButton = findViewById(R.id.browseButton);
-        browseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BrowseActivity.class);
-                Log.d(TAG,"startBrowseActivity");
-                startActivity(intent);
-            }
-        });
+//        browseButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, BrowseActivity.class);
+//                Log.d(TAG,"startBrowseActivity");
+//                startActivity(intent);
+//            }
+//        });
 
         Button discussionButton = findViewById(R.id.discussionButton);
         discussionButton.setOnClickListener(new View.OnClickListener() {

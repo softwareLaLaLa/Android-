@@ -9,15 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PaperActivity"
+            android:parentActivityName=".UserActivity">
+
+        </activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity">
+
+        </activity>
         <activity
             android:name=".DiscussionActivity"
             android:label="@string/title_activity_discussion"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity -->
+        <!-- android:name=".BrowseActivity" -->
+        <!-- android:label="@string/title_activity_browse" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
+        <activity android:name=".MainActivity"></activity>
         <activity
-            android:name=".BrowseActivity"
-            android:label="@string/title_activity_browse"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+            android:name=".UserActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

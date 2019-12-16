@@ -1,6 +1,7 @@
 package com.example.lalala.ui.browse_fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,28 +42,40 @@ public class BrowseFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.d("BrowseFragment","createfragment1");
         super.onCreate(savedInstanceState);
+        Log.d("BrowseFragment","createfragment2");
     }
 
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+            //Log.d("BrowseFragment","createview1");
             View root = inflater.inflate(R.layout.fragment_browse, container, false);
+            //Log.d("BrowseFragment","createview2");
         return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         initData();
+        if(paperBrowseItems==null){
+            Log.d("BrowseFragment","NULL");
+        }else{
+            Log.d("BrowseFragment",String.valueOf(paperBrowseItems.size()));
+        }
         paperViewList = view.findViewById(R.id.paperList);
         paperAdapter = new PaperAdapter(paperBrowseItems, getActivity());
+
+
         paperViewList.setAdapter(paperAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         paperViewList.setLayoutManager(layoutManager);
     }
 
     private void initData(){
+        paperBrowseItems.clear();
         for(int i=0; i<10; ++i){
             List<String> subjects = new ArrayList<>();
             subjects.add("subject1"+i);
