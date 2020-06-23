@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_follow"
-        android:name="com.example.lalala.ui.follow.FollowFragment"
+        android:name="com.example.lalala.ui.follow.HistoryFragment"
         android:label="@string/menu_follow"
         tools:layout="@layout/fragment_follow" />
 

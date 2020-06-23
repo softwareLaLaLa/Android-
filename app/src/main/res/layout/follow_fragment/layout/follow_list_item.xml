@@ -5,14 +5,14 @@
     android:orientation="horizontal"
     android:padding="15dp">
 
-    <ImageView
-        android:id="@+id/follow_iv_author"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:scaleType="fitCenter"
-        android:background="#000">
+<!--    <ImageView-->
+<!--        android:id="@+id/follow_iv_author"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:background="#000">-->
 
-    </ImageView>
+<!--    </ImageView>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
         <TextView
-            android:id="@+id/author_name"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/author_name"
@@ -29,15 +29,40 @@
             android:textStyle="bold">
 
         </TextView>
-        <TextView
-            android:id="@+id/author_disp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/author_introduction"
-            android:maxLines="1">
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            <TextView
+                android:background="@drawable/typeitem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:id="@+id/browse_tag1"
+                android:layout_margin="3dp"
+                ></TextView>
 
-        </TextView>
+            <TextView
+                android:background="@drawable/typeitem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:id="@+id/browse_tag2"
+                android:layout_margin="3dp"
+                ></TextView>
+
+            <TextView
+                android:background="@drawable/typeitem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:id="@+id/browse_tag3"
+                android:layout_margin="3dp"
+                ></TextView>
+        </LinearLayout>
+
     </LinearLayout>
 
 

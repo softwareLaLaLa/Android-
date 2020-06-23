@@ -1,6 +1,7 @@
 package com.example.lalala.ui.browse_fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,16 +17,13 @@ import com.example.lalala.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class BrowseFragmentP extends Fragment {
-    private BrowseViewModel browseViewModel;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        browseViewModel =
-                ViewModelProviders.of(this).get(BrowseViewModel.class);
+        Log.d("BrowseFragmentP", "onCreateView");
         View root = inflater.inflate(R.layout.activity_browse, container, false);
-
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getActivity(), getActivity().getSupportFragmentManager());
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getActivity(), getChildFragmentManager());
         ViewPager viewPager = root.findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = root.findViewById(R.id.tabs);

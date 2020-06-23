@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lalala">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,14 +19,9 @@
         <activity android:name=".LoginActivity">
 
         </activity>
-        <activity
-            android:name=".DiscussionActivity"
-            android:label="@string/title_activity_discussion"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity -->
         <!-- android:name=".BrowseActivity" -->
         <!-- android:label="@string/title_activity_browse" -->
         <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
-        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".UserActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -34,6 +31,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.search.SearchActivity" />
     </application>
+
 
 </manifest>

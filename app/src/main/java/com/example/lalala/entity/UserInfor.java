@@ -8,12 +8,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserInfor {
-    int usr_id;
-    String name;
-    String avatar;
-    List<PaperSimpleData> browseHistory = new ArrayList<>();
-    List<Integer> groupID = new ArrayList<>();
-    List<Integer> candidateGroupID = new ArrayList<>();
+    private int usr_id;
+    private String name;
+    private String avatar;
+    private List<PaperSimpleData> browseHistory = new ArrayList<>();
+
+
+    private List<Integer> groupID = new ArrayList<>();
+    private List<Integer> candidateGroupID = new ArrayList<>();
+
+    public UserInfor() {
+        usr_id = 1;
+        name = "username";
+        avatar = "student";
+    }
+
+    public List<Integer> getGroupID() {
+        return groupID;
+    }
+
+    public void setGroupID(List<Integer> groupID) {
+        this.groupID = groupID;
+    }
+
+    public List<Integer> getCandidateGroupID() {
+        return candidateGroupID;
+    }
+
 
     public void setUsr_id(int usr_id) {
         this.usr_id = usr_id;
@@ -48,14 +69,5 @@ public class UserInfor {
         return browseHistory;
     }
 
-    public UserInfor(UserEntity userEntity, List<PaperSimpleData> browseHistory){
-        Gson gson = new Gson();
-        this.usr_id = userEntity.getId();
-        this.name = userEntity.getName();
-        this.avatar = userEntity.getAvatar();
-        this.browseHistory = browseHistory;
-        Type idListType = new TypeToken<ArrayList<Integer>>(){}.getType();
-        this.groupID = gson.fromJson(userEntity.getGroup(), idListType);
-        this.candidateGroupID = gson.fromJson(userEntity.getCandidateGroup(), idListType);
-    }
+
 }

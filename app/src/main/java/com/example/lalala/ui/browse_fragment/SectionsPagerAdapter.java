@@ -1,6 +1,7 @@
 package com.example.lalala.ui.browse_fragment;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -29,8 +30,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a BrowseFragment (defined as a static inner class below).
+        Log.d("SectionPagerAdapter", "getItem: " + position);
         return BrowseFragment.newInstance(position + 1);
     }
+
 
     @Nullable
     @Override

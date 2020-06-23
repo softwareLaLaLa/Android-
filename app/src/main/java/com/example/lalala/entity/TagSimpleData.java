@@ -12,8 +12,10 @@ public class TagSimpleData {
         return name;
     }
 
-    public TagSimpleData(TagEntity tagEntity){
-        this.id = tagEntity.getId();
-        this.name = tagEntity.getName();
+    public TagSimpleData(int tagId, String tagName){
+        this.id=tagId;
+        this.name=tagName;
     }
+
+
 }

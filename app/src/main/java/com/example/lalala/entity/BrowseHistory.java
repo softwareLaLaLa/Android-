@@ -1,5 +1,6 @@
 package com.example.lalala.entity;
 
+
 import java.util.List;
 
 public class BrowseHistory {
