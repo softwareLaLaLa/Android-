@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_follow_field">领域</string>
+    <string name="user_name">用户名</string>
+    <string name="follow_field">兴趣标签</string>
+    <string name="upload_paper">上传论文</string>
+</resources>
