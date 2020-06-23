@@ -24,22 +24,23 @@
                 android:textSize="22dp"
                 android:padding="5dp"></TextView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/author"
-                android:padding="3dp"></TextView>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/author"-->
+<!--                android:padding="3dp"></TextView>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
                 <TextView
                     android:background="@drawable/typeitem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:id="@+id/type1"
+                    android:id="@+id/tag1"
                     android:layout_margin="3dp"
                     ></TextView>
 
@@ -48,8 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:id="@+id/type2"
-                    android:visibility="gone"
+                    android:id="@+id/tag2"
                     android:layout_margin="3dp"
                     ></TextView>
 
@@ -58,35 +58,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:id="@+id/type3"
-                    android:visibility="gone"
+                    android:id="@+id/tag3"
                     android:layout_margin="3dp"
                     ></TextView>
+
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/commentNum"
+                    android:id="@+id/browseNum"
                     android:textColor="@color/gray"
                     android:layout_margin="2dp"
                     android:textSize="12sp"
-                    app:layout_constraintTop_toBottomOf="@+id/type1"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/citeNum"
-                    android:textColor="@color/gray"
-                    android:layout_margin="2dp"
-                    android:textSize="12sp"
-                    app:layout_constraintLeft_toRightOf="@+id/commentNum"
+                    app:layout_constraintTop_toBottomOf="@+id/tag1"
                     />
             </LinearLayout>
         </LinearLayout>

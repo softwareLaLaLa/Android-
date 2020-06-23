@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:focusableInTouchMode="true"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="0dp"
+        android:id="@+id/search_block"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        >
+
+<!--        <include layout="@layout/header_search"/>-->
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"
+            android:onClick="backToHome"
+            android:src="@drawable/back"/>
+
+        <com.example.lalala.ui.search.EditText_Search
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="264"
+            android:drawablePadding="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="start|center_vertical"
+            android:imeOptions="actionSearch"
+            android:background="@drawable/login_outline"
+            android:inputType="text"
+            android:lines="1"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+       />
+
+</LinearLayout>

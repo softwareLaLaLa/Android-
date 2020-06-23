@@ -1,7 +1,28 @@
 <resources>
-    <string name="app_name">lalala</string>
+    <string name="app_name">Software</string>
     <string name="title_activity_browse">browseActivity</string>
-    <string name="tab_text_1">关注</string>
-    <string name="tab_text_2">推荐</string>
+    <string name="action_settings">Setting</string>
+    <string name="tab_text_2">关注</string>
+    <string name="tab_text_1">推荐</string>
     <string name="tab_text_3">热榜</string>
+    <string name="search">搜索</string>
+
+    <string name="menu_homeP">主页</string>
+    <string name="menu_home">个人主页</string>
+    <string name="menu_follow">浏览记录</string>
+
+    <string name="username_hint">请输入用户名</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="back">返回</string>
+    <string name="password_ensure">请确认密码</string>
+    <string name="select_identity">请选择您的身份</string>
+    <string name="select_field">请选择您感兴趣的标签</string>
+
+
+    <string name="paper_download">前往下载</string>
+    <string name="paper_add_tag">自定义标签</string>
+    <string name="suggest_tags">推荐标签</string>
+    <string name="submit">提交</string>
 </resources>
