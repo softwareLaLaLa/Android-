@@ -200,12 +200,12 @@ public class BrowseFragment extends Fragment implements MessageResponse, RecHotP
     public void onReceived(String resJson) {
         if (SaveUser.rePapers.size() >= 6) {
             for (int i = 0; i < 6; i++) {
-                paperRecItems.add(SaveUser.rePapers.get(0));
+                paperRecItems.add(SaveUser.rePapers.remove(0));
             }
         } else if(SaveUser.rePapers.size()!=0){
             int size = SaveUser.rePapers.size();
             for (int i =0;i<size;i++) {
-                paperRecItems.add(SaveUser.rePapers.get(0));
+                paperRecItems.add(SaveUser.rePapers.remove(0));
             }
         }else{
             getPapers();
@@ -213,11 +213,11 @@ public class BrowseFragment extends Fragment implements MessageResponse, RecHotP
         }
         if (SaveUser.rePapersC.size() >= 2) {
             for (int i = 0; i < 2; i++) {
-                paperRecItems.add(SaveUser.rePapersC.get(0));
+                paperRecItems.add(SaveUser.rePapersC.remove(0));
             }
         }else {
             for (PaperSimpleData paper : SaveUser.rePapersC) {
-                paperRecItems.add(SaveUser.rePapersC.get(0));
+                paperRecItems.add(SaveUser.rePapersC.remove(0));
             }
         }
         Collections.shuffle(paperRecItems);
