@@ -210,19 +210,15 @@ public class PaperActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String tagName = et.getText().toString();
-                        if (tagNames.contains(tagName)) {
-                            Toast toast = Toast.makeText(PaperActivity.this, "标签已存在！", Toast.LENGTH_SHORT);
-                            toast.show();
+
+                        if (!existTagsName.contains(tagName)) {
+                            addTags.add(tagName);
                         } else {
-                            //如果自定义的标签不在推荐列表中，就添加到自定义标签列表中
-                            if (!existTagsName.contains(tagName)) {
-                                addTags.add(tagName);
-                            } else {
-                                existTags.add(recTags.get(tagName));
-                            }
-                            tagNames.add(tagName);
-                            newButton(tagName, flexboxLayout_add);
+                            existTags.add(recTags.get(tagName));
                         }
+                        tagNames.add(tagName);
+                        newButton(tagName, flexboxLayout_add);
+
                     }
                 }).setNegativeButton("取消", null).show();
     }
