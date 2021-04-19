@@ -18,10 +18,8 @@ import com.example.lalala.R;
 import com.example.lalala.UserActivity;
 import com.example.lalala.entity.PaperSimpleData;
 import com.example.lalala.http.MessageResponse;
-import com.example.lalala.http.RePaperTask;
 import com.example.lalala.http.SearchTask;
 import com.example.lalala.shared_info.SaveUser;
-import com.example.lalala.ui.browse_fragment.PaperAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -53,27 +51,8 @@ public class SearchActivity extends Activity implements MessageResponse {
                     }
                     else {
                         Toast.makeText(SearchActivity.this, "需要搜索的是" + text, Toast.LENGTH_SHORT).show();
-                        if(SaveUser.Debug){
-                            if(text=="text"){
-                                for (int i = 0; i < 10; ++i) {
-                                    List<String> tags = new ArrayList<>();
-                                    tags.add("tag1");
-                                    tags.add("tag2");
-                                    tags.add("tag3");
-                                    searchPapers.add(new PaperSimpleData(111, "title"+i, i, tags));
-                                }
-                                searchAdapter = new SearchAdapter(searchPapers,SearchActivity.this);
-                                resultList.setAdapter(searchAdapter);
-                                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(SearchActivity.this);
-                                resultList.setLayoutManager(linearLayoutManager);
-                            }
-                            else{
-                                Toast.makeText(SearchActivity.this, "搜索结果为空", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                        else {
-                            searchTask.execute(text);
-                        }
+
+                        searchTask.execute(text);
                     }
 
                 }

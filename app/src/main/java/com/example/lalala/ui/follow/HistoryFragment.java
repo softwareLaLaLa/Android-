@@ -24,10 +24,6 @@ public class HistoryFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_follow, container, false);
         //final TextView textView = root.findViewById(R.id.text_gallery);
         ListView listView = root.findViewById(R.id.list_follow);
-        if(!SaveUser.Debug){
-            listView.setAdapter(new HistoryListAdapter(getActivity()));
-        }
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

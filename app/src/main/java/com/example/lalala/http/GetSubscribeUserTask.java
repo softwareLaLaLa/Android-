@@ -2,7 +2,7 @@ package com.example.lalala.http;
 
 import android.os.AsyncTask;
 
-public class SearchTask extends AsyncTask<String, Void, String> {
+public class GetSubscribeUserTask extends AsyncTask<Void, Void, String> {
     private MessageResponse messageResponse;
 
     public void setMessageResponse(MessageResponse messageResponse) {
@@ -10,12 +10,12 @@ public class SearchTask extends AsyncTask<String, Void, String> {
     }
 
     @Override
-    protected String doInBackground(String... strings) {
-        return HttpHandler.doGet(HttpHandler.paperUrl + "/search?searchText=" + strings[0], "");
+    protected String doInBackground(Void... voids) {
+        return HttpHandler.doGet(HttpHandler.accountUrl + "/userSubscribe", "");
     }
 
     @Override
-    protected void onPostExecute(String res){
+    protected void onPostExecute(String res) {
         messageResponse.onReceived(res);
     }
 }

@@ -2,14 +2,17 @@
     <string name="app_name">Software</string>
     <string name="title_activity_browse">browseActivity</string>
     <string name="action_settings">Setting</string>
-    <string name="tab_text_2">关注</string>
-    <string name="tab_text_1">推荐</string>
+    <string name="tab_text_2">推荐</string>
+    <string name="tab_text_1">广场</string>
     <string name="tab_text_3">热榜</string>
     <string name="search">搜索</string>
 
     <string name="menu_homeP">主页</string>
     <string name="menu_home">个人主页</string>
     <string name="menu_follow">浏览记录</string>
+    <string name="menu_subscribe">订阅用户</string>
+    <string name="menu_share">分享论文</string>
+    <string name="menu_dislike">屏蔽论文</string>
 
     <string name="username_hint">请输入用户名</string>
     <string name="password_hint">请输入密码</string>
@@ -25,4 +28,6 @@
     <string name="paper_add_tag">自定义标签</string>
     <string name="suggest_tags">推荐标签</string>
     <string name="submit">提交</string>
+
+    <string name="root">下拉加载更多</string>
 </resources>

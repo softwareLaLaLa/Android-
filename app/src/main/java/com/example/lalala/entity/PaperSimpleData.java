@@ -1,59 +1,24 @@
 package com.example.lalala.entity;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
-public class PaperSimpleData implements Serializable {
-    public void setTitle(String title) {
-        this.title = title;
+public class PaperSimpleData {
+    private PaperEntity paperEntity;
+    private List<String> tags;
+
+    public PaperEntity getPaperEntity() {
+        return paperEntity;
     }
 
-    public void setTagList(List<String> tagList) {
-        this.tagList = tagList;
+    public void setPaperEntity(PaperEntity paperEntity) {
+        this.paperEntity = paperEntity;
     }
 
-    public String getTitle() {
-        return title;
+    public List<String> getTags() {
+        return tags;
     }
 
-    public List<String> getTagList() {
-        return tagList;
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
-
-    public int getPaper_id() {
-        return paper_id;
-    }
-
-    public void setPaper_id(int paper_id) {
-        this.paper_id = paper_id;
-    }
-
-    public int getTotalBrowseNum() {
-        return totalBrowseNum;
-    }
-
-    public void setTotalBrowseNum(int totalBrowseNum) {
-        this.totalBrowseNum = totalBrowseNum;
-    }
-
-    public void addTag(String tag){
-        tagList.add(tag);
-    }
-
-    public PaperSimpleData(int paper_id, String title, int totalBrowseNum, List<String> tagList){
-        this.paper_id = paper_id;
-        this.title = title;
-        this.totalBrowseNum = totalBrowseNum;
-        this.tagList = tagList;
-    }
-
-    public PaperSimpleData(){}
-
-    int paper_id;
-    String title;
-    int totalBrowseNum;
-    List<String> tagList = new ArrayList<>();
 }

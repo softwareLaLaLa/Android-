@@ -1,5 +1,5 @@
 package com.example.lalala.http;
 
 public interface ResponseRecTags {
-    void receiveRecTags();
+    void receiveRecTags(String res);
 }

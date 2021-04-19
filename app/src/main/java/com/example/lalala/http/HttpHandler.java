@@ -1,10 +1,10 @@
 package com.example.lalala.http;
 
 import android.net.http.AndroidHttpClient;
+import android.os.Build;
 import android.util.Log;
 
 import com.android.internal.http.multipart.MultipartEntity;
-import com.google.gson.Gson;
 
 import java.io.*;
 import java.lang.reflect.GenericSignatureFormatError;
@@ -37,7 +37,11 @@ import java.util.Map;
 import java.util.StringJoiner;
 
 public class HttpHandler {
-    static public final String url = "http://192.168.43.203:50001";
+    static private final String baseUrl = "http://192.168.2.106:";
+    static public final String recommendUrl = baseUrl + "50002";
+    static public final String tagUrl = baseUrl + "50003";
+    static public final String paperUrl = baseUrl + "50001";
+    static public final String accountUrl = baseUrl + "50004";
 
     static public String getUrlContent(String sUrl) throws IOException {
 
@@ -143,6 +147,7 @@ public class HttpHandler {
         return result;
     }
 
+    //@android.support.annotation.RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static String doPostWithForm(String url, Map<String, String> paramsMap) {
         String result = null;
         //PrintWriter out = null;

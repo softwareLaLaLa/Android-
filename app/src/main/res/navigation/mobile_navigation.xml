@@ -23,4 +23,22 @@
         android:label="@string/menu_follow"
         tools:layout="@layout/fragment_follow" />
 
+    <fragment
+        android:id="@+id/nav_subscribe"
+        android:name="com.example.lalala.ui.follow.SubscribeFragment"
+        android:label="@string/menu_subscribe"
+        tools:layout="@layout/fragment_follow" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.lalala.ui.follow.SubscribeFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_follow" />
+
+    <fragment
+        android:id="@+id/nav_dislike"
+        android:name="com.example.lalala.ui.follow.SubscribeFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_follow" />
+
 </navigation>

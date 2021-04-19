@@ -1,40 +1,35 @@
 package com.example.lalala.shared_info;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
-import com.example.lalala.entity.EvalEntity;
-import com.example.lalala.entity.InitialUserTagData;
-import com.example.lalala.entity.PaperData;
 import com.example.lalala.entity.PaperSimpleData;
-import com.example.lalala.entity.TagSimpleData;
-import com.example.lalala.entity.UserInfor;
+import com.example.lalala.entity.SquarePaperData;
+import com.example.lalala.entity.UserHistoryEntity;
+import com.example.lalala.entity.UserInfoEntity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class SaveUser {
 
-    public static boolean Debug = true;   //不连接服务器
+    public static UserInfoEntity userInfoEntity = new UserInfoEntity();
+    //广场与热榜的推荐论文数据
+    public static List<PaperSimpleData> hotPapers = new ArrayList<>();
+    public static List<SquarePaperData> squarePaper = new ArrayList<>();
+    public static int squarePaperPageNum = -1;
+    public static int pageNum = -1;
+    public static PaperSimpleData currentPaper;
 
-    public static String username;
-    public static UserInfor userInfor = new UserInfor();
-    public static ArrayList<PaperSimpleData> rePapers = new ArrayList<>();              //获取的感兴趣论文
-    public static ArrayList<PaperSimpleData> rePapersC = new ArrayList<>();             //获取的可能感兴趣论文
-    public static ArrayList<PaperSimpleData> hotPapers = new ArrayList<>();             //获取的热榜论文
-    public static ArrayList<PaperSimpleData> browseHistory = new ArrayList<>();   //要提交的历史记录
-    public static Map<Integer, Integer> groupPage = new HashMap<>();                //每个组对应的页数
-    public static PaperData curPaper = new PaperData();                                   //当前打开的论文
-    public static boolean updateUserTag = false;                             //是否需要更新用户tag信息
-    public static ArrayList<EvalEntity> evalPapers = new ArrayList<>();    //用户的评估列表
-    public static Map<Integer, Set<Integer>> paperTag = new HashMap<>();        //给论文添加已有tag
-    public static Map<Integer, Set<String>> paperNewTag = new HashMap<>();     //给论文添加新tag
-    public static boolean initial = false;
-    public static InitialUserTagData initialUserTagData = null;
-    public static ArrayList<TagSimpleData> reTags = new ArrayList<>();
+    //用户侧栏相关数据
+    public static List<UserHistoryEntity> browseHistory = new ArrayList<>();   //要提交的历史记录
+    public static List<PaperSimpleData> browsePaperData = new ArrayList<>();   //显示的历史记录信息
+    public static Set<Integer> userSubscribe = new HashSet<>();
+    public static Set<Integer> userDislike = new HashSet<>();
 
+    //用户为论文添加的标签数据
+    public static Map<Integer, Set<String>> paperTagData = new HashMap<>();
+    //用户的历史记录
+    public static List<UserHistoryEntity> userHistoryEntities = new ArrayList<>();
 }

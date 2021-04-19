@@ -1,39 +1,37 @@
 package com.example.lalala.http;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
-import com.example.lalala.entity.InitialUserTagData;
 import com.example.lalala.shared_info.SaveUser;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-public class InitTask extends AsyncTask<Void, Void, String> {
+public class InitTask extends AsyncTask<Set<String>, Void, String> {
     private RecInit recInit;
 
     public void setRecInit(RecInit recInit) {
         this.recInit = recInit;
     }
+
+
     @Override
-    protected String doInBackground(Void... voids) {
+    protected String doInBackground(Set<String>... lists) {
         Gson gson = new Gson();
-        String json = gson.toJson(SaveUser.initialUserTagData, InitialUserTagData.class);
-        return HttpHandler.doPost(HttpHandler.url+"/user-tag",json);
+        Map<String, Object> map = new HashMap<>();
+        map.put("userId", SaveUser.userInfoEntity.getId());
+        map.put("tags", lists[0]);
+        return HttpHandler.doPost(HttpHandler.recommendUrl+"/initUserTagData",gson.toJson(map));
     }
 
     @Override
     protected void onPostExecute(String res){
-        SaveUser.initialUserTagData=null;
-        Gson gson = new Gson();
-        List<Integer> groupId = gson.fromJson(res, new TypeToken<ArrayList<Integer>>(){}.getType());
-        SaveUser.userInfor.setGroupID(groupId);
-
         recInit.recInit();
-        //Log.d("InitTask", "size: "+SaveUser.userInfor.getGroupID().size());
-        //Log.d("initTask", "onPostExecute: TaskExecuted!");
     }
 
 }

@@ -13,13 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.lalala.PaperActivity;
 import com.example.lalala.R;
 import com.example.lalala.entity.PaperSimpleData;
+import com.example.lalala.entity.UserHistoryEntity;
 import com.example.lalala.http.MessageResponse;
-import com.example.lalala.http.PaperDataTask;
-import com.example.lalala.http.SearchTask;
 import com.example.lalala.shared_info.SaveUser;
-import com.example.lalala.ui.browse_fragment.PaperAdapter;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> implements MessageResponse {
@@ -46,24 +45,23 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PaperDataTask paperDataTask = new PaperDataTask();
-                paperDataTask.setMessageResponse(SearchAdapter.this);
-                paperDataTask.execute(item.getPaper_id());
-                intent = new Intent(context, PaperActivity.class);
-                intent.putExtra("title", item.getTitle());
+                UserHistoryEntity userHistoryEntity = new UserHistoryEntity();
+                userHistoryEntity.setUserId(SaveUser.userInfoEntity.getId());
+                userHistoryEntity.setPaperId(item.getPaperEntity().getId());
+                userHistoryEntity.setBrowseTime(new Date());
+                userHistoryEntity.setUncheck(true);
+                SaveUser.browseHistory.add(userHistoryEntity);
 
-                SaveUser.browseHistory.add(item);
-                SaveUser.userInfor.getBrowseHistory().add(item);
-                intent.putExtra("paperId", item.getPaper_id());
+                SaveUser.currentPaper = item;
             }
         });
-        holder.title.setText(item.getTitle());
+        holder.title.setText(item.getPaperEntity().getTitle());
         //holder.author.setText(item.getAuthor());
-        List<String> tagSimpleData = item.getTagList();
+        List<String> tagSimpleData = item.getTags();
         holder.tag1.setText(tagSimpleData.get(0));
         holder.tag2.setText(tagSimpleData.get(1));
         holder.tag3.setText(tagSimpleData.get(2));
-        holder.browseNum.setText("点击量" + item.getTotalBrowseNum());
+        holder.browseNum.setText("点击量" + item.getPaperEntity().getBrowseNum());
     }
 
     @Override

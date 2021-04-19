@@ -75,7 +75,6 @@
 package com.example.lalala;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -92,19 +91,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.lalala.entity.PaperSimpleData;
-import com.example.lalala.entity.UserInfor;
-import com.example.lalala.http.InitTask;
-import com.example.lalala.http.MessageResponse;
-import com.example.lalala.http.UserInfoTask;
 import com.example.lalala.shared_info.SaveUser;
-import com.example.lalala.ui.browse_fragment.BrowseFragment;
 import com.example.lalala.ui.search.SearchActivity;
 import com.google.android.material.navigation.NavigationView;
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 
 public class UserActivity extends AppCompatActivity {
@@ -134,11 +123,6 @@ public class UserActivity extends AppCompatActivity {
 
         View headerLayout = navigationView.inflateHeaderView(R.layout.nav_header_user2);
         tvUsername = headerLayout.findViewById(R.id.et_header_username);
-        if(!SaveUser.Debug){
-            tvUsername.setText(SaveUser.userInfor.getName());
-        }
-
-
 
         //如果用户信息为空(刚注册/登录),就获取信息
 //        if (SaveUser.userInfor == null) {

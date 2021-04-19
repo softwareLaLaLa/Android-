@@ -23,7 +23,7 @@ public class RegisterTask extends AsyncTask<String, Void, String> {
         userData.put("name",params[0]);
         userData.put("password",params[1]);
         String json = gson.toJson(userData);
-        return HttpHandler.doPost(HttpHandler.url + "/signin", json);
+        return HttpHandler.doPost(HttpHandler.accountUrl + "/signin", json);
     }
 
     @Override

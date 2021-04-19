@@ -133,50 +133,6 @@
 
         <View
             android:layout_width="match_parent"
-            android:id="@+id/line3"
-            android:layout_height="0.5dip"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:background="#000" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_suggest"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="推荐标签"/>
-
-        <com.google.android.flexbox.FlexboxLayout
-            android:id="@+id/fl_suggest_tags"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            app:flexWrap="wrap">
-
-<!--            <Button-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:id="@+id/btn_test_re"-->
-<!--                android:layout_marginTop="8dp"-->
-<!--                android:layout_marginBottom="8dp"-->
-<!--                android:layout_marginRight="5dp"-->
-<!--                android:layout_marginLeft="5dp"-->
-<!--                android:paddingLeft="10dp"-->
-<!--                android:paddingRight="10dp"-->
-<!--                android:background="@drawable/tag_outline"-->
-
-<!--                android:text="标签1114"-->
-<!--                android:textSize="18sp"/>-->
-
-        </com.google.android.flexbox.FlexboxLayout>
-
-        <View
-            android:layout_width="match_parent"
             android:id="@+id/line4"
             android:layout_height="0.5dip"
             android:layout_marginLeft="20dp"

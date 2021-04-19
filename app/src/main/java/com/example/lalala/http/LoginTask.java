@@ -21,7 +21,7 @@ public class LoginTask extends AsyncTask<String, Void, String> {
         userData.put("name", strings[0]);
         userData.put("password", strings[1]);
         String json = gson.toJson(userData);
-        return HttpHandler.doPostWithForm(HttpHandler.url + "/login", userData);
+        return HttpHandler.doPostWithForm(HttpHandler.accountUrl + "/login", userData);
     }
 
     @Override

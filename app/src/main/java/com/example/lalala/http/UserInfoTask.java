@@ -26,7 +26,7 @@ public class UserInfoTask extends AsyncTask<String, Void, String> {
 //        Map<String, String> userData = new HashMap<>();
 //        userData.put("name", strings[0]);
 //        String json = gson.toJson(userData);
-        return HttpHandler.doGet(HttpHandler.url + "/user-infor?name="+strings[0], "");
+        return HttpHandler.doGet(HttpHandler.accountUrl + "/userInfo?userName="+strings[0], "");
     }
 
     @Override

@@ -4,24 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
-import com.example.lalala.entity.UserInfor;
+import com.example.lalala.entity.UserInfoEntity;
+import com.example.lalala.http.GenerateUserSimilarityDataTask;
 import com.example.lalala.http.LoginTask;
 import com.example.lalala.http.MessageResponse;
 import com.example.lalala.http.RecUserInfo;
 import com.example.lalala.http.UserInfoTask;
 import com.example.lalala.shared_info.SaveUser;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.example.lalala.http.HttpHandler;
 
 public class LoginActivity extends AppCompatActivity implements MessageResponse, RecUserInfo {
 
@@ -46,21 +44,15 @@ public class LoginActivity extends AppCompatActivity implements MessageResponse,
                 if (username.equals("") || password.equals((""))) {
                     Toast.makeText(LoginActivity.this, "输入不能为空！", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (SaveUser.Debug) {
-                        if (username != "username") {
-                            Toast.makeText(LoginActivity.this, "用户名不存在！", Toast.LENGTH_SHORT).show();
-                        } else if (password != "password") {
-                            Toast.makeText(LoginActivity.this, "密码错误！", Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
+                        Log.d("发送登入请求", "LoginTag");
                         LoginTask loginTask = new LoginTask();
                         loginTask.setMessageResponse(LoginActivity.this);
                         loginTask.execute(username, password);
+                    try {
+                        loginTask.get();
+                    } catch (ExecutionException | InterruptedException e) {
+                        e.printStackTrace();
                     }
-//                    Intent intent = new Intent(LoginActivity.this, UserActivity.class);
-//                    startActivity(intent);
                 }
             }
         });
@@ -69,6 +61,7 @@ public class LoginActivity extends AppCompatActivity implements MessageResponse,
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -77,7 +70,6 @@ public class LoginActivity extends AppCompatActivity implements MessageResponse,
     public void onReceived(String resJson) {
         if (resJson != null && resJson.contains("authority")) {
             //SaveUser.saveUsername(LoginActivity.this, etUsername.getText().toString());
-            SaveUser.username = username;
             UserInfoTask userInfoTask = new UserInfoTask();
             userInfoTask.setRecUserInfo(this);
             userInfoTask.execute(username);
@@ -92,17 +84,24 @@ public class LoginActivity extends AppCompatActivity implements MessageResponse,
         }
     }
 
+    //获取用户信息后，向服务器请求生成用户相似性数据
     @Override
     public void recUserInfo(String res) {
         Gson gson = new Gson();
-        SaveUser.userInfor = gson.fromJson(res, UserInfor.class);
-        for (Integer i : SaveUser.userInfor.getGroupID()) {
-            SaveUser.groupPage.put(i, 0);
-        }
-        for (Integer i : SaveUser.userInfor.getCandidateGroupID()) {
-            SaveUser.groupPage.put(i, 0);
-        }
+        SaveUser.userInfoEntity = gson.fromJson(res, UserInfoEntity.class);
+        generateUserSimilarityData();
         Intent intent = new Intent(LoginActivity.this, UserActivity.class);
         startActivity(intent);
+    }
+
+    //向服务器请求生成用户喜好数据
+    private void generateUserSimilarityData(){
+        GenerateUserSimilarityDataTask generateUserSimilarityDataTask = new GenerateUserSimilarityDataTask();
+        generateUserSimilarityDataTask.execute();
+        try {
+            generateUserSimilarityDataTask.get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
